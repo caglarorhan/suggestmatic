@@ -1,0 +1,51 @@
+#dropdownTrigger{
+  width:200px;   
+  display:flex;
+  flex-direction: column;
+  border: 1px solid red;
+  }
+  
+  #dropdownTrigger + ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    padding-left:7px;
+    font-size: 12px;;
+  }
+  
+  #dropdownTrigger+ul li {
+    width: 200px;
+    height: 14px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-align: left;
+    line-height: 14px;
+    padding-left: 3px;
+    position:relative;
+  }
+  
+  #dropdownTrigger+ul li span{
+      font-weight: bold;
+      color:purple;
+  }
+  #dropdownTrigger+ul li:hover{
+      background-color: lightblue !important;
+  }
+  
+  
+  
+  #dropdownTrigger + ul li.focused {
+  background-color: gray;
+  }
+  #dropdownTrigger + ul li.focused::after, #dropdownTrigger+ul li:hover::after{
+      position:absolute;
+      color:red;
+      content:"«";
+      right:-10px;
+      font-weight: bolder;
+  }
