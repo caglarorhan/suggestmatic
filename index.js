@@ -30,7 +30,7 @@ let suggestMatic = {
               dropdownTrigger.addEventListener('keydown',(event)=>{
                 this.dropDownKeyProcessing({eventKey:event.key, eventType:event.type, dropdownTrigger:dropdownTrigger, dropdownList:dropdownList})
               })
-              
+
               dropdownTrigger.addEventListener('keyup',(event)=>{this.dropDownKeyProcessing({eventKey:event.key, eventType:event.type, dropdownTrigger:dropdownTrigger, dropdownList:dropdownList})})
   },
   dropDownKeyProcessing(dataObj={eventKey:String, eventType:String, dropdownTrigger:HTMLElement, dropdownList:HTMLElement}){
@@ -39,7 +39,7 @@ let suggestMatic = {
     let arrayOfSuggestions = dropdownList.querySelectorAll('li');
     let theKey = dataObj.eventKey;
     let eventType = dataObj.eventType;
-    
+
 
     //console.log(theKey)
     if(dropdownTrigger.value.length<4){
@@ -68,7 +68,7 @@ let suggestMatic = {
     }else if(!["ArrowDown", "ArrowUp"].includes(theKey)){
       switch(theKey){
         case "Enter":
-        if(arrayOfSuggestions.length<1) return false;  
+        if(arrayOfSuggestions.length<1) return false;
         dropdownTrigger.value=arrayOfSuggestions[this.suggestionIndexBegin].textContent;
         dropdownList.style.display = "none";
         dropdownList.innerHTML="";
@@ -83,7 +83,7 @@ let suggestMatic = {
                 givenPart:dropdownTrigger.value
                 })
             break;
-      } 
+      }
     }
   },
   getFilteredSuggestions(dataObj={givenPart:String, targetArray:Array}){
@@ -97,10 +97,10 @@ let suggestMatic = {
               dataObj.dropdownList.innerHTML="";
               if(!dataObj.dropdownList){console.log('Target list cannot be found!'); return false;};
               if(dataObj.fillingArrayOfObjects.length<1){console.log('Filling array is empty!'); return false;}
-              
+
               dataObj.fillingArrayOfObjects.sort().forEach(fillingData=>{
                   let newListItem = document.createElement('li');
-                  
+
                   let firstLetterCapitalGivenPart =dataObj.givenPart.charAt(0).toUpperCase() + dataObj.givenPart.slice(1);
 
                   let suggestedWithBold = fillingData.replaceAll(dataObj.givenPart,`<span>${dataObj.givenPart}</span>`);  // as is
@@ -109,10 +109,9 @@ let suggestMatic = {
                   newListItem.innerHTML= suggestedWithBold;
                   dataObj.dropdownList.appendChild(newListItem);
               })
-  } 
+  }
 }
 
 window.addEventListener('load',()=>{
-  let suggestionList = ["Important", "Grocery", "Work", "Home", "Personal", "Health", "Finance", "Social", "Entertainment", "Education", "Sport", "Travel", "Shopping", "Event", "Other"];
   suggestMatic.init([{dropdownTriggerId:'dropdownTrigger', targetParentId:'dropdownTrigger', suggestionList:tags}]);
 })
