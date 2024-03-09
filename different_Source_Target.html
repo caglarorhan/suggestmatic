@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="different_Source_Target.css">
+  <link rel="icon" href="./suggestmatic.png" type="image/png">
+</head>
+<body style="box-sizing: border-box; padding: 0; margin:0;">
+<h2><img src="./suggestmatic.png" alt="suggestmatic" style="width: 24px; height: 24px;"> suggestMatic - trigger and target are different</h2>
+<p>Try to search over the list with 500 daily routine name tags. You can try to type "<strong>tion</strong>", which is very commonly used in daily routines.</p>
+<div style="width:100vw; display: flex; justify-items: flex-start; justify-content: space-between; flex-direction: row">
+  <div>
+    <label for="dropdownTrigger">Dropdown Trigger:</label><input type="text" id="dropdownTrigger" name="dropdownTrigger">
+  </div>
+  <div style=" width: 50%;">
+    Dropdown target:<span id="dropdownTarget">BELOW ME</span>
+  </div>
+</div>
+
+<div style="margin-left:20px; position:fixed; bottom:0; right:0"><img src="./suggestmatic.png" alt="suggestmatic" style="width: 24px; height: 24px;"> icon by <a href="https://www.flaticon.com/free-icons/suggestion" title="suggestion icons">Suggestion icons created by Freepik - Flaticon</a></div>
+<script type="module" >
+  import {suggestMatic} from "./suggestmatic.js";
+  import {tags} from "./tags.js";
+
+  window.addEventListener('load',()=>{
+    suggestMatic.init([{dropdownTriggerId:'dropdownTrigger', targetParentId:'dropdownTarget', suggestionList:tags}]);
+
+  })
+</script>
+</body>
+</html>

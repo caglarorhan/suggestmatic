@@ -1,0 +1,52 @@
+#dropdownTarget {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+#dropdownTarget + ul {
+    list-style: none;
+    margin: 0;
+    display: none;
+    position: relative;
+    left: 0;
+    width: 200px;
+    padding: 0 0 0 7px;
+    font-size: 12px;;
+}
+
+#dropdownTarget + ul li {
+    width: 200px;
+    height: 14px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-align: left;
+    line-height: 14px;
+    padding-left: 3px;
+    position: relative;
+}
+
+#dropdownTarget + ul li span {
+    font-weight: bold;
+    color: purple;
+}
+
+#dropdownTarget + ul li:hover {
+    background-color: lightblue !important;
+    cursor: pointer;
+}
+
+
+#dropdownTarget + ul li.focused {
+    background-color: gray;
+}
+
+#dropdownTarget + ul li.focused::after, #dropdownTarget + ul li:hover::after {
+    position: absolute;
+    color: red;
+    content: "«";
+    right: -10px;
+    font-weight: bolder;
+}

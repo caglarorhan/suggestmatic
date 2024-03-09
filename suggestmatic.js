@@ -1,5 +1,5 @@
 import { tags } from "./tags.js";
-let suggestMatic = {
+export let suggestMatic = {
   suggestionIndexBegin:-1,
   init(dataObj = Array){
       if(!dataObj || !Array.isArray(dataObj) || dataObj.length<1){
@@ -111,7 +111,3 @@ let suggestMatic = {
               })
   }
 }
-
-window.addEventListener('load',()=>{
-  suggestMatic.init([{dropdownTriggerId:'dropdownTrigger', targetParentId:'dropdownTrigger', suggestionList:tags}]);
-})
