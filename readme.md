@@ -1,4 +1,6 @@
 **<img src="./suggestmatic.png" width="24">SuggestMatic**
+[TRY HERE](https://caglarorhan.github.io/suggestmatic/) 
+
 - Still under development
 - A simple tool to suggest you the best possible options for your queries
 - You can use trigger input and suggestions on different elements/positions
