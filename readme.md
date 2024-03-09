@@ -9,4 +9,4 @@
 - After typing 4th letter, it will start to suggest you the best possible options
 - You can move uo and down with arrow keys and select with enter key
 - Also, you can use mouse to select the suggestion as well
-- Please try both [Same Source and Target Example](./same_Source_Target.html) and [Different Source and Target Example](./different_Source_Target.html) to see the difference
+- Please try both [Same Source and Target Example](https://caglarorhan.github.io/suggestmatic/same_Source_Target.html) and [Different Source and Target Example](https://caglarorhan.github.io/suggestmatic/different_Source_Target.html) to see the difference
